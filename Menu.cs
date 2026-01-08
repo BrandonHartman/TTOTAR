@@ -16,28 +16,34 @@ namespace TTOTAR
             };
             var selection = AnsiConsole.Prompt(
                 new SelectionPrompt<string>()
-                    // .Title("Select an option:")
                     .PageSize(10)
                     .AddChoices(menuOptions));
             switch (selection)
             {
                 case "Start New Game":
-                    AnsiConsole.MarkupLine("[green]Starting a new game...[/]");
-                    CharacterCreation.CreateCharacter();
-                    //StartNewGame();
+                    var player = CharacterCreation.CreateCharacter();
+                    if (player != null)
+                    {
+                        // Character was created successfully!
+                        AnsiConsole.MarkupLine($"[green]Character {player.Name} created![/]");
+                        AnsiConsole.MarkupLine($"Race: {player.Race}, Class: {player.Class}");
+                        AnsiConsole.MarkupLine($"Stats - STR:{player.Strength} DEX:{player.Dexterity} CON:{player.Constitution} INT:{player.Intelligence}");
+                        AnsiConsole.MarkupLine($"HP: {player.Health}/{player.MaxHealth} | Mana: {player.Mana}/{player.MaxMana}");
+                        Console.ReadKey();
+                        // TODO: Start the actual game here
+                        ShowMainMenu(); // For now, go back to menu
+                    }
                     break;
                 case "Load Game":
                     AnsiConsole.MarkupLine("[green]Loading game...[/]");
                     //LoadGame();
                     break;
                 case "Settings":
-                    AnsiConsole.MarkupLine("[green]Opening settings...[/]");
-                    //OpenSettings();
                     Settings.OpenSettings();
                     break;
                 case "Exit":
                     AnsiConsole.MarkupLine("[green]Exiting the game. Goodbye![/]");
-                    Environment.Exit(0); // Exit the application
+                    Environment.Exit(0);
                     break;
                 default:
                     AnsiConsole.MarkupLine("[red]Invalid selection. Please try again.[/]");
