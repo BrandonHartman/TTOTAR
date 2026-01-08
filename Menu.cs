@@ -24,14 +24,9 @@ namespace TTOTAR
                     var player = CharacterCreation.CreateCharacter();
                     if (player != null)
                     {
-                        // Character was created successfully!
-                        AnsiConsole.MarkupLine($"[green]Character {player.Name} created![/]");
-                        AnsiConsole.MarkupLine($"Race: {player.Race}, Class: {player.Class}");
-                        AnsiConsole.MarkupLine($"Stats - STR:{player.Strength} DEX:{player.Dexterity} CON:{player.Constitution} INT:{player.Intelligence}");
-                        AnsiConsole.MarkupLine($"HP: {player.Health}/{player.MaxHealth} | Mana: {player.Mana}/{player.MaxMana}");
-                        Console.ReadKey();
-                        // TODO: Start the actual game here
-                        ShowMainMenu(); // For now, go back to menu
+                        // Start the game!
+                        var game = new Game(player);
+                        game.Start();
                     }
                     break;
                 case "Load Game":
