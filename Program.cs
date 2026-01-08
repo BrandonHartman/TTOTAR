@@ -18,12 +18,6 @@ namespace TTOTAR
 
             TitleScreen.ShowGameTitle();
             ConsoleMenu.ShowMainMenu();
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 46cbc0c2d70cd4b2737c88216cb83f78437d7dd1
-
         }
     }
 }
