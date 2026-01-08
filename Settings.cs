@@ -66,5 +66,22 @@ namespace TTOTAR
                 }
             }
         }
+        // Supports Spectre markup colors!
+        public static void WriteWithSpeedMarkup(string markupText)
+        {
+            if (TextSpeed == 0)
+            {
+                AnsiConsole.Markup(markupText);
+            }
+            else
+            {
+                // Parse the markup and write character by character
+                foreach (char c in markupText)
+                {
+                    Console.Write(c);
+                    Thread.Sleep(TextSpeed);
+                }
+            }
+        }
     }
 }
