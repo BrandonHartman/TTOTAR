@@ -32,6 +32,7 @@ namespace TTOTAR
                 case "Settings":
                     AnsiConsole.MarkupLine("[green]Opening settings...[/]");
                     //OpenSettings();
+                    Settings.OpenSettings();
                     break;
                 case "Exit":
                     AnsiConsole.MarkupLine("[green]Exiting the game. Goodbye![/]");
