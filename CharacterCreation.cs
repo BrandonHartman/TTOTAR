@@ -36,7 +36,7 @@ namespace TTOTAR
                             };
                         }));
 
-                ShowRaceStats(selectedRace);
+                DisplayHelper.ShowRaceStats(selectedRace);
                 AnsiConsole.WriteLine();
 
                 // Step 3: Choose class
@@ -56,7 +56,7 @@ namespace TTOTAR
                             };
                         }));
 
-                ShowClassStats(selectedClass);
+                DisplayHelper.ShowClassStats(selectedClass);
                 AnsiConsole.WriteLine();
 
                 // Step 4: Show final character summary
@@ -73,16 +73,10 @@ namespace TTOTAR
                         Name = characterName,
                         Race = selectedRace,
                         Class = selectedClass,
-                        // Give them starting stats
-                        Strength = 10,
-                        Dexterity = 10,
-                        Constitution = 10,
-                        Intelligence = 10,
-                        Health = 50,
-                        MaxHealth = 50,
-                        Mana = 50,
-                        MaxMana = 50
                     };
+
+                    PlayerStats.ApplyRaceStats(player);
+                    PlayerStats.ApplyClassStats(player);
 
                     Thread.Sleep(2000);
                     return player;  // Send the player back
@@ -95,7 +89,7 @@ namespace TTOTAR
                     return null;  // Return nothing if they cancelled
                 }
             }
-            // ...existing code...
+
 
             private static void ShowRaceStats(string race)
             {
