@@ -16,6 +16,7 @@ namespace TTOTAR
             {
                 Color = Color.Green,
                 Justification = Justify.Center
+                
             };
             AnsiConsole.Write(new Rule().RuleStyle(Style.Parse("green dim")));
             AnsiConsole.Write(version);

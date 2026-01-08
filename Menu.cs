@@ -23,6 +23,7 @@ namespace TTOTAR
             {
                 case "Start New Game":
                     AnsiConsole.MarkupLine("[green]Starting a new game...[/]");
+                    CharacterCreation.CreateCharacter();
                     //StartNewGame();
                     break;
                 case "Load Game":
