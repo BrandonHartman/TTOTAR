@@ -27,11 +27,11 @@ namespace TTOTAR
 
     public enum ArmorPlacement
     {
-        Head,
-        Chest,
-        Legs,
-        Feet,
-        Hands
+        Helmet,
+        Chestplate,
+        Leggings,
+        Boots,
+        Gloves
     }
     public enum ArmorRarity
     {

@@ -26,5 +26,20 @@ namespace TTOTAR
         public int Mana { get; set; }
         public int MaxMana { get; set; }
         public int Gold { get; set; }
+
+        // Inventory and Equipment can be added later
+        public List<object> Inventory {get; set; } = new List<object>();
+        public int InventoryCapacity { get; set;} = 20;
+
+        // Nullable equipped items
+        public Armor? EquippedHelmet { get; set; }
+        public Armor? EquippedChestplate { get; set; }
+        public Armor? EquippedLeggings { get; set; }
+        public Armor? EquippedBoots { get; set; }
+        public Armor? EquippedGloves { get; set; }
+        public Weapon? EquippedMainHand { get; set; }
+        public Weapon? EquippedOffHand { get; set;}
+        public Weapon? EquippedTwoHanded { get; set;}
+
     }
 }
