@@ -85,6 +85,7 @@ namespace TTOTAR
             // TODO: Add random encounters, loot, etc.
         }
 
+        // ! this will need to be refactored later to properly show items
         private void ViewInventory()
         {
             AnsiConsole.Clear();

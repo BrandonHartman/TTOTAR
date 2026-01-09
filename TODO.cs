@@ -33,5 +33,8 @@
     ! Remove static starting equipment from Player and have it generated at start 
     ! with Json templates for each type - in characterCreation.cs
     ! Have players equipped right off the start. 
+    ! TODO: Go through the code and make sure all colors and styles are consistent with color 
+    ! variables in DisplayHelper.cs
+    
 
 */
