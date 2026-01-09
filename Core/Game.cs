@@ -98,14 +98,29 @@ namespace TTOTAR
             else
             {
                 Settings.WriteWithSpeed("You have the following items:\n");
+                
+                var table = new Table();
+                table.Border(TableBorder.Rounded);
+                table.AddColumn("Item Name");
+                table.AddColumn("Description");
+                table.AddColumn("Rarity");
+                table.AddColumn("Value");
+
                 foreach (var item in player.Inventory)
                 {
-                    AnsiConsole.MarkupLine($"- {item.ToString()}\n");
+                    if (item is Weapon weapon)
+                    {
+                        table.AddRow(new Markup(weapon.Name), new Markup(weapon.Description), new Markup(weapon.Rarity), new Markup($"{weapon.Value} gp"));
+                    }
+                    else if (item is Armor armor)
+                    {
+                        table.AddRow(new Markup(armor.Name), new Markup(armor.Description), new Markup(armor.Rarity), new Markup($"{armor.Value} gp"));
+                    }
                 }
+                AnsiConsole.Write(table);
             }
             AnsiConsole.MarkupLine("\n[dim]Press any key to continue...[/]");
             Console.ReadKey();
-            ShowGameMenu();
         }
 
         private void ViewStats()

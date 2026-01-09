@@ -28,5 +28,7 @@
     ! Go back and refactor code for Buying and selling Armor, Weapons, and Items.
     ! will just have ArmorValue, WeaponValue, and ItemValue properties in their 
     ! respective classes
+    ! Have the items, armor and weapons to be generated with random color values
+    ! within a range based on Rarity
 
 */
