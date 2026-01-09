@@ -16,6 +16,8 @@ namespace TTOTAR
         public int Weight { get; set; }
 
         public int Durability { get; set; }
+
+        public int ArmorValue { get; set; }
     }
 
     public enum ArmorPlacement
