@@ -1,8 +1,7 @@
 using System;
 using Spectre.Console;
 
-namespace TTOTAR
-{
+namespace TTOTAR{
     class Player
     {
         // Basic player information
