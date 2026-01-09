@@ -40,9 +40,10 @@ namespace TTOTAR
 
             var options = new[] 
             { 
-                "Explore", 
+                "Explore",
+                "Inventory",
+                "Rest",
                 "View Stats", 
-                "Rest", 
                 "Exit to Main Menu" 
             };
 
@@ -56,6 +57,9 @@ namespace TTOTAR
                 case "Explore":
                     Explore();
                     return true; // Keep playing
+                case "Inventory":
+                    ViewInventory();
+                    return true;
                 case "View Stats":
                     ViewStats();
                     return true;
@@ -79,6 +83,28 @@ namespace TTOTAR
             AnsiConsole.MarkupLine("\n[dim]Press any key to continue...[/]");
             Console.ReadKey();
             // TODO: Add random encounters, loot, etc.
+        }
+
+        private void ViewInventory()
+        {
+            AnsiConsole.Clear();
+            Settings.WriteWithSpeed("You open your inventory...\n");
+            Thread.Sleep(1000);
+            if (player.Inventory.Count == 0)
+            {
+                Settings.WriteWithSpeedMarkup("[red]Your inventory is empty.[/]\n");
+                Thread.Sleep(1000);
+            }
+            else
+            {
+                Settings.WriteWithSpeed("You have the following items:\n");
+                foreach (var item in player.Inventory)
+                {
+                    AnsiConsole.MarkupLine($"- {item.ToString()}\n");
+                }
+            }
+            AnsiConsole.MarkupLine("\n[dim]Press any key to continue...[/]");
+            Console.ReadKey();
         }
 
         private void ViewStats()
