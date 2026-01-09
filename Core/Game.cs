@@ -103,18 +103,17 @@ namespace TTOTAR
                 table.Border(TableBorder.Rounded);
                 table.AddColumn("Item Name");
                 table.AddColumn("Description");
-                table.AddColumn("Rarity");
                 table.AddColumn("Value");
 
                 foreach (var item in player.Inventory)
                 {
                     if (item is Weapon weapon)
                     {
-                        table.AddRow(new Markup(weapon.Name), new Markup(weapon.Description), new Markup(weapon.Rarity), new Markup($"{weapon.Value} gp"));
+                        table.AddRow(weapon.Name, weapon.Description, $"{weapon.Value} gp");
                     }
                     else if (item is Armor armor)
                     {
-                        table.AddRow(new Markup(armor.Name), new Markup(armor.Description), new Markup(armor.Rarity), new Markup($"{armor.Value} gp"));
+                        table.AddRow(armor.Name, armor.Description, $"{armor.Value} gp");
                     }
                 }
                 AnsiConsole.Write(table);
