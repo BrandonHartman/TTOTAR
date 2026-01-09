@@ -30,5 +30,8 @@
     ! respective classes
     ! Have the items, armor and weapons to be generated with random color values
     ! within a range based on Rarity
+    ! Remove static starting equipment from Player and have it generated at start 
+    ! with Json templates for each type - in characterCreation.cs
+    ! Have players equipped right off the start. 
 
 */
