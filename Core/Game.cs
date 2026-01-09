@@ -92,7 +92,7 @@ namespace TTOTAR
             Thread.Sleep(1000);
             if (player.Inventory.Count == 0)
             {
-                Settings.WriteWithSpeedMarkup("[red]Your inventory is empty.[/]\n");
+                AnsiConsole.MarkupLine("[red]Your inventory is empty.[/]\n");
                 Thread.Sleep(1000);
             }
             else
@@ -105,6 +105,7 @@ namespace TTOTAR
             }
             AnsiConsole.MarkupLine("\n[dim]Press any key to continue...[/]");
             Console.ReadKey();
+            ShowGameMenu();
         }
 
         private void ViewStats()
