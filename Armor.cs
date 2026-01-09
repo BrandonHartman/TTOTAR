@@ -18,12 +18,11 @@ namespace TTOTAR
 
         public int DefenseBonus { get; set;}
 
-        // TODO: Add properties for durability, weight, special effects, etc.
         public int Weight { get; set; }
 
         public int Durability { get; set; }
 
-        public int ArmorValue { get; set; }
+        public int Value { get; set; }
     }
 
     public enum ArmorPlacement

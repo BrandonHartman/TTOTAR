@@ -5,6 +5,7 @@ namespace TTOTAR
 {
     public class Weapon
     {
+        public WeaponPlacement Slot { get; set; }
         public WeaponType WeaponType { get; set; }
 
         public DamageType DamageType { get; set; }
@@ -15,8 +16,6 @@ namespace TTOTAR
 
         public WeaponRarity WeaponRarity { get; set; }
 
-
-        public int Damage { get; set; }
         public required int MinDamage { get; set; }
         public required int MaxDamage { get; set; }
         public required string Name { get; set; }
@@ -27,10 +26,16 @@ namespace TTOTAR
 
         public int Durability { get; set; } 
 
-        public int WeaponValue { get; set; }
+        public int Value { get; set; }
 
 
 
+    }
+    public enum WeaponPlacement
+    {
+        MainHand,
+        OffHand,
+        TwoHanded
     }
 
     public enum WeaponType
